@@ -68,7 +68,7 @@ class Filme {
         return dataLanc;
     }
 
-    // Tranformando pra Date (?)
+    // Tranformando pra Date
     public void setDataLanc(Date dataLanc){
        this.dataLanc = dataLanc;
     }
@@ -205,12 +205,11 @@ class Filme {
                 setTitulooriginal(tituloOriginal);
             }
 
-            // DATA DE LANÇAMENTO (TA DANDO ERRO = Unparseable date: "30/09/2021" )
+            // DATA DE LANÇAMENTO
             if (line.contains("span class=\"release\"")) {
                 line = scanner.nextLine();
                 Date data = null;
                 line = removeTag(line).trim();
-                //Método para remover o país de lançamento Ex: (BR)
                 try {
                     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); 
                     data = formatter.parse(line); 
